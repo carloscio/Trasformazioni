@@ -1,0 +1,56 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- base href="https://grantshandy.github.io/posts/geogebra-in-hugo/" --><style>body{margin-left:0;margin-right:0;margin-top:0}#bN015htcoyT__google-cache-hdr{background:#f8f9fa;font:13px arial,sans-serif;text-align:left;color:#202124;border:0;margin:0;border-bottom:1px solid #dadce0;line-height:16px;padding:16px 28px 24px 28px}#bN015htcoyT__google-cache-hdr *{display:inline;font:inherit;text-align:inherit;color:inherit;line-height:inherit;background:none;border:0;margin:0;padding:0;letter-spacing:0}#bN015htcoyT__google-cache-hdr a{text-decoration:none;color:#1a0dab;}#bN015htcoyT__google-cache-hdr a:hover{text-decoration:underline}#bN015htcoyT__google-cache-hdr a:visited{color:#681da8}#bN015htcoyT__google-cache-hdr div{display:block;margin-top:4px}#bN015htcoyT__google-cache-hdr b{font-weight:bold;display:inline-block;direction:ltr}</style></head><body class="dark-theme"><div id="bN015htcoyT__google-cache-hdr"><div><span>Questa è la copia cache di Google di <a href="https://grantshandy.github.io/posts/geogebra-in-hugo/">https://grantshandy.github.io/posts/geogebra-in-hugo/</a>.</span>&nbsp;<span>È un'istantanea della pagina visualizzata il 17 giu 2023 14:45:47 GMT.</span>&nbsp;<span>Nel frattempo la <a href="https://grantshandy.github.io/posts/geogebra-in-hugo/">pagina corrente</a> potrebbe essere stata modificata.</span>&nbsp;<a href="http://support.google.com/websearch/bin/answer.py?hl=it&amp;p=cached&amp;answer=1687222"><span>Ulteriori informazioni</span>.</a></div><div><span style="display:inline-block;margin-top:8px;margin-right:104px;white-space:nowrap"><span style="margin-right:28px"><a href="http://webcache.googleusercontent.com/search?q=cache:0jpbCCjJ6qkJ:https://grantshandy.github.io/posts/geogebra-in-hugo/&amp;client=firefox-b-d&amp;hl=it&amp;gl=it&amp;strip=0&amp;vwsrc=0"><span>Versione completa</span></a></span><span style="margin-right:28px"><span style="font-weight:bold">Versione solo testo</span></span><span style="margin-right:28px"><a href="http://webcache.googleusercontent.com/search?q=cache:0jpbCCjJ6qkJ:https://grantshandy.github.io/posts/geogebra-in-hugo/&amp;client=firefox-b-d&amp;hl=it&amp;gl=it&amp;strip=0&amp;vwsrc=1"><span>Visualizza sorgente</span></a></span></span></div><span style="display:inline-block;margin-top:8px;color:#70757a"><span>Suggerimento. Per trovare rapidamente il termine di ricerca su questa pagina, digita <b>Ctrl+F</b> o <b>⌘-F</b> (Mac) e utilizza la barra di ricerca.</span></span></div><div style="position:relative; margin:8px;"><title>How to Embed the GeoGebra Calculator App in a Hugo Static Site ::
+grantsh</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="One thing I figured out when writing &amp;ldquo;Write a First Person Game in 2KB With Rust&amp;rdquo; was how to embed the GeoGebra calculator into a Hugo site. GeoGebra is a website that lets you design interactive diagrams for teaching geometry. In my opinion, it&amp;rsquo;s pretty impressive to explain a concept then have an interactive diagram right below the text for the reader to try themselves.
+I don&amp;rsquo;t think this has ever been done before in a hugo site, so I&amp;rsquo;ve decided to share how I did it in case someone else needs to do it in the future."><meta name="keywords" content=""><meta name="robots" content="noodp"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="How to Embed the GeoGebra Calculator App in a Hugo Static Site"><meta name="twitter:description" content="How to embed interactive geometry demos in Hugo static sites."><meta property="og:title" content="How to Embed the GeoGebra Calculator App in a Hugo Static Site"><meta property="og:description" content="How to embed interactive geometry demos in Hugo static sites."><meta property="og:type" content="article"><meta property="og:url" content="https://grantshandy.github.io/posts/geogebra-in-hugo/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-02-25T00:00:00+00:00"><meta property="article:modified_time" content="2023-02-25T00:00:00+00:00"><div class="container"><a href="https://grantshandy.github.io/" class="logo" style="text-decoration:none">grantsh
+</a>
+<ul class="menu__inner menu__inner--desktop"><li><a href="https://grantshandy.github.io/about">About</a></li><li><a href="https://grantshandy.github.io/posts">Posts</a></li><li><a href="https://grantshandy.github.io/showcase">Showcase</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href="https://grantshandy.github.io/about">About</a></li><li><a href="https://grantshandy.github.io/posts">Posts</a></li><li><a href="https://grantshandy.github.io/showcase">Showcase</a></li></ul><div class="content"><h1 class="post-title">How to Embed the GeoGebra Calculator App in a Hugo Static Site</h1><div class="post-meta">2023-02-25
+— 2 min read</div><div class="post-content"><p>One thing I figured out when writing “<a href="https://grantshandy.github.io/posts/raycasting" rel="noopener" target="_blank">Write a First Person Game in 2KB With Rust</a>” was how to embed the <a href="https://geogebra.org/" rel="noopener" target="_blank">GeoGebra</a> calculator into a <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a>
+ site.
+GeoGebra is a website that lets you design interactive diagrams for 
+teaching geometry.
+In my opinion, it’s pretty impressive to explain a concept then have an 
+interactive diagram right below the text for the reader to try 
+themselves.</p><p>I don’t think this has ever been done before in a hugo
+ site, so I’ve decided to share how I did it in case someone else needs 
+to do it in the future.</p><p>First, you need to include the &lt;script&gt; for the GeoGebra library in your site’s &lt;head&gt;:</p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{{ if .Page.Store.Get "hasGeogebra" }}
+&lt;script src="https://www.geogebra.org/apps/deployggb.js"&gt;&lt;/script&gt;
+{{ end }}
+</pre></div><p>Then, create a hugo shortcode at layouts/shortcodes/geogebra.html:</p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{{ .Page.Store.Set "hasGeogebra" true }}
+
+&lt;script&gt;
+  window.addEventListener("load", function() { 
+    new GGBApplet({
+      appName: "geometry",
+      id: '{{ .Get "name" | default "geogebra" }}',
+      showToolBar: false,
+      showZoomButtons: false,
+      showAlgebraInput: false,
+      showLogging: false,
+      enableRightClick: false,
+      enableShiftDragZoom: false,
+      preventFocus: true,
+      showMenuBar: false,
+      appletOnLoad: (api) =&gt; {
+        api.setCoordSystem({{ .Get "coords" | safeJS }});  
+      },
+      filename: '{{ .Site.BaseURL }}{{ .Get "file" }}'
+    }).inject('{{ .Get "name" | default "geogebra" }}');
+  });
+&lt;/script&gt;
+
+&lt;figure&gt;
+  &lt;div id='{{ .Get "name" | default "geogebra" }}'&gt;&lt;/div&gt;
+  &lt;figcaption&gt;{{ .Get "caption" | markdownify }}&lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre></div><p>These are the options that I’ve set to make the diagrams 
+feel “seamless” on my site, but if you want to enable the other 
+parameters feel free to do so.
+Here’s a handy reference to the <a href="https://wiki.geogebra.org/en/Reference:GeoGebra_App_Parameters" rel="noopener" target="_blank">GGBApplet’s constructor parameters</a>, there are a lot.</p><p>Now you can add GeoGebra diagrams right in your markdown by calling it like this:</p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{{&lt; geogebra
+    file="ggb/wallace-simson.ggb"
+    name="wallace-simson"
+    caption="The Wallace-Simson Line"
+&gt;}}
+</pre></div><div id="geogebra" style="border-radius:8px;overflow:hidden"></div>The Wallace-Simson Line<p>If you have more than one embed on a single page you need to set the name parameter or else it will break.</p><p>Oh, and if you go around digging in the browser devtools looking for the GeoGebra calculator’s CSS class, it’s GeoGebraFrame:</p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">.GeoGebraFrame {
+  border-width: 0px !important;
+  user-select: none !important;
+}
+</pre></div></div></div><div class="footer__inner"><div class="copyright copyright--user">© 2023 Grant Handy</div></div></div></div></body></html>

@@ -1,0 +1,180 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Trasformazioni inverse</title>
+<meta name="description" content="Trasformazioni inverse con Derive">
+<meta name="keywords" content="laboratorio, Derive, trasformazioni, lineari, prodotto di trasformazioni, trasformazione inversa, identità, matrice unità">
+</head>
+
+<body vlink="#026C02" text="#026C02" link="#026C02" bgcolor="#FFFFFF" background="9_files/sfondo_derive.gif">
+
+<table width="820" cellspacing="0" cellpadding="40" border="0" align="Center">
+<tbody><tr>
+<td valign="top" bgcolor="#C6FCC6" align="left">
+<font size="1" face="Verdana" color="#470205">
+</font><p align="right"><font size="1" face="Verdana" color="#470205">
+<a href="https://www.paololazzarini.it/derive/derive10.htm">Attività successiva</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive08.htm">Attività precedente</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive00.htm">Indice</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/index.htm">Home</a><br><br><br><br>
+<img src="9_files/logo.gif" border="0" align="left">
+<br clear="ALL"><br><br><br>
+</font>
+
+</p><p align="JUSTIFY">
+<font size="2" face="Verdana,Arial" color="#000000">
+<b>Attività 9 - Trasformazioni inverse</b>
+</font></p><hr width="100%" size="3" color="#008000"><font size="2" face="Verdana,Arial" color="#000000">
+<br>
+<p align="JUSTIFY">
+<img src="9_files/fig0037.gif" border="0" align="right">
+Sia <i>t</i> una trasformazione e P' un punto qualsiasi del piano. Poichè <i>t</i> è una corrispondenza biunivoca, possiamo chiederci quale sia il punto P, l'<b>unico</b> punto P, tale che
+</p><blockquote>
+t(P) = P'
+</blockquote>
+<p align="JUSTIFY">
+In tal modo viene a definirsi una nuova trasformazione del piano, chiamiamola <i>s</i>, che associa al punto P' il punto P. Quindi
+</p><blockquote>
+s(P') = P
+</blockquote>
+<p align="JUSTIFY">
+La trasformazione <i>s</i> così definita si chiama, come sai, trasformazione <i>inversa</i> di <i>t</i>. Osserva che il prodotto delle trasformazioni <i>s</i> e <i>t</i> (e anche il prodotto di <i>t</i> con <i>s</i>) è uguale alla <b>trasformazione identica</b>, infatti
+</p><blockquote>
+s(t(P)) = s(P') = P
+</blockquote>
+e anche
+<blockquote>
+ t(s(P')) = t(P) = P'
+</blockquote>
+<p align="JUSTIFY">
+Te ne rendi conto, semplicemente, ragionando sul diagramma in figura: se applichi a un generico punto P prima <i>t</i> e poi <i>s</i> ritorni a P (quindi ogni punto del piano è unito). E se applichi a un generico punto P' prima <i>s</i> e poi <i>t</i> ritorni a P' (quindi, di nuovo, ogni punto P' del piano è unito). Nota che qui le lettere P' e P, indicando punti <b>generici</b> del piano, hanno lo stesso ruolo, una vale l'altra.<br><br>
+
+<br><br>
+<img src="9_files/esperimento.gif" border="0" align="left"><br>&nbsp;<b>Esperimento 1</b>
+<br><br>
+</p><p align="JUSTIFY">
+Considera una generica trasformazione lineare <i>t</i> di matrice
+</p><blockquote>
+<img src="9_files/espr0009.gif" border="0">
+</blockquote>
+<p align="JUSTIFY">
+(ricorda che det(M) è, per definizione, <b>non nullo</b>). Determina la trasformazione inversa e mostra che si tratta di una trasformazione che è ancora <b>lineare</b>.
+</p><center><img src="9_files/fiocco.gif" border="0"></center>
+<p align="JUSTIFY">
+Ecco il codice
+</p><blockquote>
+<img src="9_files/codice0070.gif" border="0">
+<img src="9_files/codice0071.gif" border="0">
+</blockquote>
+<p align="JUSTIFY">
+Osserva che il determinante della matrice N è uguale all'inverso del 
+determinante della matrice M (riga #15): poichè M è non nullo anche N 
+sarà non nullo. La matrice N che abbiamo determinato prende il nome di 
+matrice <i>inversa</i> di M ed è tale che 
+</p><blockquote>
+<img src="9_files/espr0046.gif" border="0">
+</blockquote>
+<p align="JUSTIFY">
+Ciò consegue dal fatto che, come si è visto nell'<a href="https://www.paololazzarini.it/derive/derive08.htm">attività precedente</a>,
+ la matrice del prodotto di due trasformazioni lineari è uguale al 
+prodotto delle matrici delle due trasformazioni e nel nostro caso il 
+prodotto delle trasformazioni è la trasformazione identica (che, come 
+sappiamo, ha per matrice la <a href="https://www.paololazzarini.it/derive/derive01.htm#esp7">matrice unità</a>). Facciamo una verifica con Derive
+</p><blockquote>
+<img src="9_files/codice0072.gif" border="0">
+</blockquote>
+<p align="JUSTIFY">
+Tieni presente che non tutte le matrici quadrate sono invertibili (o, si dice anche, <i>non singolari</i>):
+ lo sono solo quelle che rappresentano una trasformazione geometrica 
+(corrispondenza biunivoca) cioè quelle che hanno determinante non nullo.
+ La matrice inversa di una matrice M, se esiste, viene indicata col 
+simbolo 
+</p><blockquote>
+M<sup>-1</sup>
+</blockquote>
+Proviamo a far calcolare la matrice inversa di M a Derive
+<blockquote>
+<img src="9_files/codice0073.gif" border="0">
+</blockquote>
+<p align="JUSTIFY">
+Ora consideriamo una matrice a determinante nullo e verifichiano che non è invertibile
+</p><blockquote>
+<img src="9_files/codice0074.gif" border="0">
+</blockquote>
+
+<p align="JUSTIFY">
+<b><u>Osservazione 1</u></b> Ci siamo resi conto che se <i>t</i> è una trasformazione lineare di matrice M allora la trasformazione inversa di <i>t</i> è la trasformazione lineare di matrice M<sup>-1</sup>. Inoltre si ha det(M<sup>-1</sup>) = 1/det(M).
+<br><br>
+<b><u>Osservazione 2</u></b> E' facile verificare che una trasformazione
+ affine di matrice M e vettore v ha come trasformazione inversa la 
+trasformazione affine di matrice M<sup>-1</sup> e vettore -M<sup>-1</sup>v.
+
+<br><br><br><br>
+<img src="9_files/esperimento.gif" border="0" align="left"><br>&nbsp;<b>Esperimento 2</b>
+<br><br>
+</p><p align="JUSTIFY">
+Considera l'isometria <i>t</i>, determinata nell'<a href="https://www.paololazzarini.it/derive/derive08.htm#esp2">esperimento 2</a> dell'attività precedente, di matrice
+</p><blockquote>
+<img src="9_files/espr0048.gif" border="0">
+</blockquote>
+e vettore
+<blockquote>
+<img src="9_files/espr0049.gif" border="0">
+</blockquote>
+<p align="JUSTIFY">
+che porta il triangolo rosso nel triangolo rosa. Determina la 
+trasformazione inversa e verifica che porta il triangolo rosa nel 
+triangolo rosso.
+</p><center><img src="9_files/fiocco.gif" border="0"></center>
+<p align="JUSTIFY">
+Ecco il codice
+</p><blockquote>
+<img src="9_files/codice0075.gif" border="0">
+<img src="9_files/codice0076.gif" border="0">
+</blockquote>
+</font><p align="JUSTIFY"><font size="2" face="Verdana,Arial" color="#000000">
+Come vedi, per definire la trasformazione inversa abbiamo tenuto conto dell'osservazione 2.
+
+
+</font>
+<br><br><br><br>
+<font size="1" face="Verdana" color="#470205">
+</font></p><p align="right"><font size="1" face="Verdana" color="#470205">
+<a href="https://www.paololazzarini.it/derive/derive10.htm">Attività successiva</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive08.htm">Attività precedente</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive00.htm">Indice</a>&nbsp;&nbsp;&nbsp; 
+<a href="https://www.paololazzarini.it/derive/index.htm">Home</a>
+</font>
+</p></td>
+</tr>
+</tbody></table>
+
+<br>
+<table width="300" cellspacing="5" cellpadding="10" border="0" align="Center">
+<tbody><tr><td valign="top" bgcolor="#89AB89" align="center">
+<font size="1" face="Verdana, Arial" color="white">
+<center>
+<br>
+Ultimo aggiornamento novembre 2006<br>
+Versione di Derive utilizzata 6.10<br>
+p.lazzarini@tin.it<br>
+<br>
+</center>
+</font>
+</td>
+</tr></tbody></table>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+<!-- 
+var sc_project=2698830; 
+var sc_invisible=0; 
+var sc_partition=26; 
+var sc_security="8f72b577"; 
+//-->
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c27.statcounter.com/counter.php?sc_project=2698830&amp;java=0&amp;security=8f72b577&amp;invisible=0" alt="website stats" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+</body></html>

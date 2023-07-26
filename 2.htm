@@ -1,0 +1,224 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Proprietà delle trasformazioni lineari del piano</title>
+<meta name="description" content="Proprietà delle trasformazioni lineari del piano">
+<meta name="keywords" content="laboratorio, Derive, proprietà, trasformazione, lineare, vettore, matrice">
+</head>
+
+<body vlink="#026C02" text="#026C02" link="#026C02" bgcolor="#FFFFFF" background="2_files/sfondo_derive.gif">
+
+<table width="820" cellspacing="0" cellpadding="40" border="0" align="Center">
+<tbody><tr>
+<td valign="top" bgcolor="#C6FCC6" align="left">
+<font size="1" face="Verdana" color="#470205">
+</font><p align="right"><font size="1" face="Verdana" color="#470205">
+<a href="https://www.paololazzarini.it/derive/derive03.htm">Attività successiva</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive01.htm">Attività precedente</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive00.htm">Indice</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/index.htm">Home</a><br><br><br><br>
+<img src="2_files/logo.gif" border="0" align="left">
+<br clear="ALL"><br><br><br>
+</font>
+
+</p><p align="JUSTIFY">
+<font size="2" face="Verdana,Arial" color="#000000">
+<b>Attività 2 - Proprietà delle trasformazioni lineari del piano</b>
+</font></p><hr width="100%" size="3" color="#008000"><font size="2" face="Verdana,Arial" color="#000000">
+<br>
+<p align="JUSTIFY">
+Ogni punto [x, y] del piano può essere pensato come un <b>vettore</b> 
+con punto iniziale nell'origine e punto finale in [x, y]. Possiamo 
+quindi addizionare punti (cioè vettori) e moltiplicare punti (cioè 
+vettori) per uno scalare (cioè per un numero reale <i>k</i>); ricorderai che, per definizione, si ha
+</p><blockquote>
+[x, y] + [u, v] = [x+u, y+v]
+</blockquote>
+e
+<blockquote>
+k[x, y] = [kx, ky]
+</blockquote>
+<p align="JUSTIFY">
+Tieni presente che in seguito parleremo indifferentemente di vettori o di punti. 
+<br><br>
+Mostriamo che se <i>t</i> è una trasformazione lineare del piano e [x, y] e [u, v] sono due generici vettori allora si ha
+</p><blockquote>
+(<b>proprietà 1</b>) &nbsp;&nbsp;&nbsp;t([x, y] + [u, v]) = t([x, y]) + t([u, v])
+</blockquote>
+<p align="JUSTIFY">
+cioè il trasformato della somma di due vettori è la somma dei trasformati. Inoltre se <i>k</i> indica un numero reale si ha
+</p><blockquote>
+(<b>proprietà 2</b>) &nbsp;&nbsp;&nbsp;t(k·[x, y]) = k·t([x, y])
+</blockquote>
+<p align="JUSTIFY">
+cioè il trasformato del prodotto di un numero per un vettore è uguale al
+ prodotto del numero per il trasformato del vettore. Ecco la 
+dimostrazione con Derive
+</p><blockquote><img src="2_files/codice0009.gif" border="0"></blockquote>
+<p align="JUSTIFY">
+Semplificando le righe #6 e #8 si ottengono rispettivamente le righe #7 e
+ #9, quindi lo stesso vettore; analogamente semplificando le righe #11 e
+ #13 si ottiene lo stesso vettore.<br>
+Tieni presente che la riga #1 imposta la variabile di sistema <i>CaseMode</i> in modo che Derive distingua maiuscole da minuscole e quindi, ad esempio, distingua la variabile <i>m</i> dalla variabile <i>M</i>. Ci avvarremo di questa possibilità tra poco.
+<br><br>
+<u><b>Osservazione 1</b></u> Abbiamo visto che ogni trasformazione 
+lineare del piano verifica le proprietà 1 e 2. Si può dimostrare, 
+viceversa, che se una trasformazione del piano verifica le proprietà 1 e
+ 2 allora è una trasformazione lineare cioè è definita dalle equazioni
+</p><blockquote>
+x' = ax + by<br>
+y' = cx + dy<br>
+</blockquote>
+con <i>ad - bc</i> <b>non nullo</b>. 
+<br><br>
+Ora proveremo, in un sol colpo, due proprietà importanti che hai già intuito nell'attività precedente:
+<blockquote>
+(<b>proprietà 3</b>)&nbsp;&nbsp;&nbsp; una trasformazione lineare 
+trasforma rette in rette (ricorda che se M è la matrice della 
+trasformazione deve essere det(M)<img src="2_files/diverso.gif" border="0"><i>0</i>);<br><br>
+(<b>proprietà 4</b>) &nbsp;&nbsp;&nbsp; una trasformazione lineare trasforma rette parallele in rette parallele.
+</blockquote>
+Ragioniamo così. I punti di una generica retta <i>r</i> di equazione y = mx + q (quindi non parallela all'asse delle y) sono della forma
+<blockquote>
+[x, mx+q]
+</blockquote>
+Considerando i loro trasformati si ha
+<blockquote><img src="2_files/codice0012.gif" border="0"></blockquote>
+Quindi i punti trasformati, chiamiamoli [x1, y1], soddisfano le due equazioni
+<blockquote>
+x1 = x(a + bm) + bq<br>
+y1 = x(c + dm) + dq
+</blockquote>
+<p align="JUSTIFY">
+Ricordando che Derive ci consente di operare con le equazioni, ci conviene chiamarle rispettivamente E1 ed E2
+</p><blockquote><img src="2_files/codice0013a.gif" border="0"></blockquote>
+<p align="JUSTIFY">
+Poi opereremo così
+</p><blockquote><img src="2_files/codice0013b.gif" border="0"></blockquote>
+<p align="JUSTIFY">
+Nota che alla riga #22 abbiamo moltiplicato la prima equazione per (c + 
+dm), la seconda per (a + bm) e poi sottratto; si ottiene infine 
+l'equazione della riga #25 che deve essere necessariamente soddisfatta 
+dai punti trasformati [x1, y1]. Ora un'osservazione importante: i due 
+numeri (c + dm) e (a + bm) non possono essere <b>entrambi</b> nulli 
+perchè si avrebbe c = -dm, a = -bm e det(M) sarebbe nullo, contro 
+l'ipotesi. Ne segue che l'equazione #25, che lega x1 e y1, è proprio 
+l'equazione di una retta, come volevamo provare (proprietà 3). Ora, se 
+(a + bm) è diverso da 0, procediamo così
+</p><blockquote><img src="2_files/codice0014.gif" border="0"></blockquote>
+<p align="JUSTIFY">
+Nota che in questo caso il coefficiente angolare della retta trasformata, chiamiamola <i>r'</i>, è 
+</p><blockquote><img src="2_files/espr0008.gif" border="0"></blockquote>
+<p align="JUSTIFY">
+e, come vedi, dipende dalla matrice M della trasformazione e dal coefficiente angolare <i>m</i> della retta di partenza <b>ma non dipende da <i>q</i></b>. Ciò significa che se considerassimo una nuova retta <i>s</i> parallela ad <i>r</i> (quindi di stesso coefficiente angolare <i>m</i>) e applicassimo la stessa trasformazione di matrice M, otterremmo una retta<i> s'</i> parallela ad <i>r'</i>.
+ Quindi, in questo caso, si conserva il parallelismo (proprietà 4). 
+Esaminiamo ora il secondo caso possibile, cioè che sia  a + bm = 0 e 
+quindi, necessariamente, c + dm diverso da zero
+</p><blockquote><img src="2_files/codice0015.gif" border="0"></blockquote>
+<p align="JUSTIFY">
+Si ottiene una retta parallela all'asse delle y. Quindi, di nuovo, è 
+verificata la proprietà 4. E' poi facile verificare le proprietà 3 e 4 
+nel caso in cui la retta di partenza sia parallela all'asse delle y cioè
+ abbia equazione della forma x = k.
+<br><br>
+<a name="prop5">
+Ecco un'altra utile proprietà delle trasformazioni lineari:
+</a></p><blockquote><a name="prop5">
+(<b>proprietà 5</b>) &nbsp;&nbsp;&nbsp;una trasformazione lineare di matrice<br>
+<blockquote><img src="2_files/espr0009.gif" border="0"></blockquote>
+trasforma il vettore [1, 0] nel vettore [a, c] e il vettore [0, 1] nel 
+vettore [b, d] cioè trasforma i versori degli assi x e y rispettivamente
+ nella prima e nella seconda colonna della matrice M.
+</a></blockquote><a name="prop5">
+<p align="JUSTIFY">
+La verifica è immediata
+</p><blockquote><img src="2_files/codice0016.gif" border="0"></blockquote>
+
+</a><a name="oss2">
+</a><p align="JUSTIFY"><a name="oss2">
+<u><b>Osservazione 2</b></u> Abbiamo visto che una trasformazione 
+lineare trasforma rette in rette; sappiamo inoltre che una 
+trasformazione lineare fissa l'origine (cioè ha l'origine come punto 
+unito, vedi </a><a href="https://www.paololazzarini.it/derive/derive01.htm#esp4">l'esperimento 4</a>
+ dell'attività precedente). Si può dimostrare, viceversa, che ogni 
+trasformazione del piano che muti rette in rette e fissi l'origine è una
+ trasformazione lineare, cioè è definita dalle equazioni
+</p><blockquote>
+x' = ax + by<br>
+y' = cx + dy<br>
+</blockquote>
+con <i>ad - bc</i> <b>non nullo</b>.
+<br><br><br><br>
+
+<img src="2_files/esperimento.gif" border="0" align="left"><br>&nbsp;<b>Esperimento 1</b>
+<br><br>
+Applica la trasformazione lineare individuata dalla matrice 
+<blockquote><blockquote><img src="2_files/espr0032.gif" border="0"></blockquote></blockquote>
+<p align="JUSTIFY">
+al trapezio di vertici A=[1, 1], B=[2, 2], C=[3, 1], D=[1, -1]. Verifica
+ che si conserva il rapporto tra i lati paralleli (cioè tra AB e CD) 
+mentre non si conserva il rapporto tra i lati non paralleli. Dimostra, 
+in generale, che una trasformazione lineare <b>conserva il rapporto tra segmenti paralleli</b> (o tra segmenti che si trovano sulla stessa retta).
+</p><center><img src="2_files/fiocco.gif" border="0"></center>
+<br>
+Ecco la figura e il codice di Derive
+<blockquote><img src="2_files/fig0023.gif" border="0"><br><br>
+<img src="2_files/codice0038.gif" border="0"><br>
+<img src="2_files/codice0039.gif" border="0">
+</blockquote>
+<p align="JUSTIFY"><img src="2_files/fig0024.gif" width="186" height="156" border="0" align="right">
+Come vedi, le espressioni delle righe #13 e #22 forniscono lo stesso 
+valore 1/2 e ciò prova che si conserva il rapporto dei lati paralleli.<br><br>
+Per dimostrare <b>in generale</b> la proprietà verificata nel caso 
+particolare del trapezio precedente, ci farà comodo formulare la 
+questione in termini vettoriali. Siano PQ e RS due segmenti paralleli e 
+P'Q', R'S' i loro trasformati (che sappiamo essere paralleli). Dire che i
+ segmenti PQ e RS sono paralleli equivale a dire, indicando con <b>u</b> il vettore Q-P e con <b>v</b> il vettore S-R, che si ha <b>v</b>=k<b>u</b> (cioè v è un multiplo di u, k indica un numero reale). Ecco poi come procederemo
+</p><blockquote>
+<img src="2_files/codice0040.gif" border="0">
+</blockquote>
+Dall'uguaglianza dei risultati alle righe #9 e #12 (rispettivamente semplificazioni delle righe #8 e #11) segue la tesi.
+
+
+</font>
+<br><br><br><br>
+<font size="1" face="Verdana" color="#470205">
+</font><p align="right"><font size="1" face="Verdana" color="#470205">
+<a href="https://www.paololazzarini.it/derive/derive03.htm">Attività successiva</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive01.htm">Attività precedente</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/derive00.htm">Indice</a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.paololazzarini.it/derive/index.htm">Home</a>
+</font>
+</p></td>
+</tr>
+</tbody></table>
+
+<br>
+<table width="300" cellspacing="5" cellpadding="10" border="0" align="Center">
+<tbody><tr><td valign="top" bgcolor="#89AB89" align="center">
+<font size="1" face="Verdana, Arial" color="white">
+<center>
+Ultimo aggiornamento ottobre 2006<br>
+Versione di Derive utilizzata 6.10<br>
+p.lazzarini@tin.it<br>
+<br>
+</center>
+</font>
+</td>
+</tr></tbody></table>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+<!-- 
+var sc_project=2698830; 
+var sc_invisible=0; 
+var sc_partition=26; 
+var sc_security="8f72b577"; 
+//-->
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c27.statcounter.com/counter.php?sc_project=2698830&amp;java=0&amp;security=8f72b577&amp;invisible=0" alt="website stats" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+</body></html>
