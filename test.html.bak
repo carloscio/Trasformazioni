@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
     <title>Trasformazioni Geometriche</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -18,8 +17,8 @@
       <br>
       <br>
     </p>
-    <p><font style="font-size: 20pt" size="4">Questo <i><b>invece </b></i>è il
-        <span style="color: red;">testo </span>a cui associo una equazione
+    <p><font style="font-size: 20pt" size="4">Questo <i><b>invece </b></i>è
+        il <span style="color: red;">testo </span>a cui associo una equazione
         $$x^2+3x-2$$</font></p>
     <p><br>
       <br>
